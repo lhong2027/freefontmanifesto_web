@@ -3,7 +3,153 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>Free Font Manifesto</title>
+        <link rel="stylesheet" href="style.css" />
     </head>
-    <body></body>
+    <body>
+        <!--marqueeeeee-->
+
+        <div class="vertical-marquee left">
+            <div class="marquee-content">
+                <span>FREE FONT* MANIFESTO</span>
+                <span>FREE FONT* MANIFESTO</span>
+                <span>FREE FONT* MANIFESTO</span>
+                <span>FREE FONT* MANIFESTO</span>
+                <span>FREE FONT* MANIFESTO</span>
+                <span>FREE FONT* MANIFESTO</span>
+                <span>FREE FONT* MANIFESTO</span>
+                <span>FREE FONT* MANIFESTO</span>
+            </div>
+            <div class="marquee-content" aria-hidden="true">
+                <span>FREE FONT* MANIFESTO</span>
+                <span>FREE FONT* MANIFESTO</span>
+                <span>FREE FONT* MANIFESTO</span>
+                <span>FREE FONT* MANIFESTO</span>
+                <span>FREE FONT* MANIFESTO</span>
+                <span>FREE FONT* MANIFESTO</span>
+                <span>FREE FONT* MANIFESTO</span>
+                <span>FREE FONT* MANIFESTO</span>
+            </div>
+        </div>
+
+        <div class="vertical-marquee right">
+            <div class="marquee-content">
+                <span>FREE FONT* MANIFESTO</span>
+                <span>FREE FONT* MANIFESTO</span>
+                <span>FREE FONT* MANIFESTO</span>
+                <span>FREE FONT* MANIFESTO</span>
+                <span>FREE FONT* MANIFESTO</span>
+                <span>FREE FONT* MANIFESTO</span>
+                <span>FREE FONT* MANIFESTO</span>
+                <span>FREE FONT* MANIFESTO</span>
+            </div>
+            <div class="marquee-content" aria-hidden="true">
+                <span>FREE FONT* MANIFESTO</span>
+                <span>FREE FONT* MANIFESTO</span>
+                <span>FREE FONT* MANIFESTO</span>
+                <span>FREE FONT* MANIFESTO</span>
+                <span>FREE FONT* MANIFESTO</span>
+                <span>FREE FONT* MANIFESTO</span>
+                <span>FREE FONT* MANIFESTO</span>
+                <span>FREE FONT* MANIFESTO</span>
+            </div>
+        </div>
+        <main>
+            <nav>
+                <a href="https://designmanifestos.org/ellen-lupton-free-font-manifesto/">*</a>
+
+                <a href="https://elupton.com">**</a>
+            </nav>
+            <header>
+                <h1>Free Font<span class="asterisk">*</span> Manifesto</h1>
+                <h2>
+                    What if
+                    <span style="color: blue; font-family: pecita; text-decoration: line-through"
+                        >EVERY</span
+                    >
+                    a few** digital type foundr<span
+                        style="color: blue; font-family: pecita; text-decoration: line-through"
+                        >Y</span
+                    >ies on earth gave away one
+                    <span style="color: blue; font-family: pecita; text-decoration: line-through"
+                        >GREAT</span
+                    >
+                    good*** typeface as a gift to humanity?****
+                </h2>
+            </header>
+
+            <div class="box box1">
+                <h3 class="sub sub1">**WHAT IS A FREE FONT?</h3>
+                <p>
+                    A free font is not just a typeface that you don’t have to pay for. A stolen (or
+                    illegally copied) typeface isn’t free. A free font must be freely given by its
+                    maker. And to be truly free, it should be available to everyone, not just to a
+                    circle of friends or to the buyers of a particular software package or operating
+                    system. Many of the so-called free fonts that are distributed on the Internet
+                    don’t meet this description. Like open source software, the freedom of the fonts
+                    shown on this page is made explicit through their licensing, which allows other
+                    people to not only use the fonts but to modify them (granted that they change
+                    the name of the typeface if they alter its design).
+                </p>
+            </div>
+
+            <div class="box box2">
+                <h3 class="sub sub2">**SHOULD ALL FONTS BE FREE?</h3>
+                <p>
+                    Typeface design is a profession and a business. If all fonts were free—or even
+                    if every type designer created just one free font—the business of typeface
+                    design might be destroyed. Today, the free font movement is addressing typeface
+                    needs that are not being adequately met by the typeface industry. Most typefaces
+                    created in the free font movement are designed to serve relatively small or
+                    underserved linguistic communities. They have an explicit social purpose, and
+                    they are intended to offer the world not a luxurious outpouring of typographic
+                    variation but rather the basics for maintaining literacy and communication
+                    within a society.
+                </p>
+            </div>
+
+            <div class="box box3">
+                <h3>***WHAT MAKES A TYPEFACE “GOOD”?</h3>
+                <p>
+                    Currently, most fonts created in the open source spirit are produced for small
+                    or underserved linguistic populations. Such fonts are “good” in the moral sense.
+                    In the future, designers may choose to make free fonts in the service of other
+                    social needs as well. For example, in developing countries graphic designers who
+                    seek to build a typographic culture in their home regions require more than a
+                    bare-minimum typographic vocabulary, and they often rely on pirated typefaces to
+                    do so. A richer selection of legitimate free fonts, clearly labelled and
+                    promoted as such in an educational way, might help to build respect for the
+                    larger commercial ecology of typeface design.
+                </p>
+            </div>
+
+            <div class="box box4">
+                <h3>****IS A TYPEFACE A MEANINGFUL GIFT TO HUMANITY?</h3>
+                <p>
+                    In the scheme of things, a typeface may seem like a small gift, so maybe
+                    designers and software companies should devote their charitable efforts to more
+                    urgent causes. However, I believe that typefaces are valuable, powerful, and
+                    beautiful cultural tools, worthy of legal protection and deserving of the price
+                    they bring in the Western marketplace. Moreover, a gift of typography makes good
+                    on a unique body of skill, knowledge, and passion.Perhaps the free font movement
+                    will continue to grow slowly, along the lines in which it is already taking
+                    shape: in the service of creating typefaces that sustain and encourage both the
+                    diversity and connectedness of humankind.
+                </p>
+            </div>
+        </main>
+
+        <script>
+            const boxes = document.querySelectorAll('.box');
+
+            boxes.forEach((box) => {
+                const heading = box.querySelector('h3');
+
+                heading.addEventListener('click', () => {
+                    // Toggle the 'active' class on the clicked box
+                    box.classList.toggle('active');
+                });
+            });
+        </script>
+    </body>
 </html>

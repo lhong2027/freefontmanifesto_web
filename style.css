@@ -1,0 +1,336 @@
+@font-face {
+    font-family: work-sans-black;
+    src: url(./Fonts/WorkSans_Complete/Fonts/OTF/WorkSans-Black.otf);
+}
+
+@font-face {
+    font-family: work-sans-regular;
+    src: url(./Fonts/WorkSans_Complete/Fonts/OTF/WorkSans-Regular.otf);
+}
+
+@font-face {
+    font-family: gemini;
+    src: url(./Fonts/Gemini-Regular.otf);
+}
+@font-face {
+    font-family: hikaru;
+    src: url(./Fonts/VRM-HIKARU-main/HIKARUMONO-Regular.otf);
+}
+@font-face {
+    font-family: pecita;
+    src: url(./Fonts/Pecita.otf);
+}
+@font-face {
+    font-family: garamondt;
+    src: url(./Fonts/Garamondt-Regular.otf);
+}
+
+@font-face {
+    font-family: slackey;
+    src: url(./Fonts/Slackey-Regular.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f5f5f5;
+    padding: 100px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+nav a {
+    text-decoration: none;
+    color: blue;
+    font-family: work-sans-black;
+    font-size: 50px;
+    transition: 0.1s;
+}
+
+nav a:hover {
+    font-size: 70px;
+}
+
+h1 {
+    font-family: work-sans-black;
+    font-size: 3rem;
+}
+
+h1:hover {
+    font-family: pecita;
+    color: blue;
+}
+
+h2 {
+    font-family: work-sans-black;
+    font-size: 1.8rem;
+    margin: 70px 0px 100px 0;
+}
+
+h3 {
+    font-size: 1.5rem;
+    cursor: pointer;
+    font-family: work-sans-black;
+}
+
+.box1 h3:hover {
+    font-family: slackey;
+    color: blue;
+}
+.box2 h3:hover {
+    font-family: gemini;
+    color: blue;
+}
+.box3 h3:hover {
+    font-family: hikaru;
+    color: blue;
+}
+
+.box4 h3:hover {
+    font-family: garamondt;
+    color: blue;
+}
+
+p {
+    font-family: work-sans-regular;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 30px 0;
+}
+p:hover {
+    color: blue;
+}
+
+.box {
+    margin-bottom: 40px;
+}
+
+.box p {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition:
+        max-height 0.3s ease,
+        opacity 0.2s ease,
+        margin 0.2s ease;
+    margin: 0;
+}
+
+.box1 p:hover {
+    font-family: slackey;
+}
+
+.box2 p:hover {
+    font-family: gemini;
+}
+
+.box3 p:hover {
+    font-family: hikaru;
+}
+
+.box4 p:hover {
+    font-family: garamondt;
+}
+
+.box.active p {
+    max-height: 300px;
+    opacity: 1;
+    margin: 30px 0;
+}
+
+.asterisk {
+    color: blue;
+    transition: 0.1s;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.asterisk:hover {
+    font-size: 5rem;
+    animation-name: spin;
+    animation-duration: 0.1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/*marqueeeee*/
+
+/* Vertical Marquee Styling */
+.vertical-marquee {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 40px; /* Adjust width as needed */
+    overflow: hidden;
+    z-index: 1000;
+    pointer-events: none; /* Prevents blocking clicks on elements near the edges */
+    font-family: work-sans-black;
+    color: blue;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+
+.vertical-marquee.left {
+    left: 10px;
+}
+
+.vertical-marquee.right {
+    right: 10px;
+}
+
+.marquee-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    white-space: nowrap;
+    animation: scroll-vertical 30s linear infinite;
+}
+
+.marquee-content span {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    padding: 15px 0;
+}
+
+@keyframes scroll-vertical {
+    0% {
+        transform: translateY(0%);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}
+
+/* mmmmmmmmmmmmobile versionnnnnnnnnnnnnnnnnnnnn*/
+
+@media (max-width: 768px) {
+    body {
+        padding: 40px 40px;
+        background-color: blue;
+        color: white;
+    }
+
+    nav a {
+        font-size: 35px;
+        color: white;
+    }
+
+    nav a:hover {
+        color: white;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+        color: white;
+    }
+
+    h1:hover {
+        color: white;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        margin: 50px 0 60px 0;
+        color: white;
+    }
+
+    /* Forces the inline-colored blue words in your h2 to turn white */
+    h2 span {
+        color: white !important;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+        color: white;
+    }
+
+    .box1 h3:hover,
+    .box2 h3:hover,
+    .box3 h3:hover,
+    .box4 h3:hover {
+        color: white;
+    }
+
+    p:hover,
+    .box1 p:hover,
+    .box2 p:hover,
+    .box3 p:hover,
+    .box4 p:hover {
+        color: white;
+    }
+
+    .asterisk {
+        color: white;
+    }
+
+    .vertical-marquee {
+        width: 25px;
+        font-size: 0.9rem;
+        color: white;
+    }
+
+    .vertical-marquee.left {
+        left: 2px;
+    }
+
+    .vertical-marquee.right {
+        right: 2px;
+    }
+}
+
+/*
+@media (max-width: 768px) {
+    body {
+        padding: 40px;
+    }
+
+    nav a {
+        font-size: 35px;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    h2 {
+        font-size: 1rem;
+        margin: 30px 0 40px 0;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    .vertical-marquee {
+        width: 25px;
+        font-size: 0.9rem;
+    }
+
+    .vertical-marquee.left {
+        left: 2px;
+    }
+
+    .vertical-marquee.right {
+        right: 2px;
+    }
+}
+*/
