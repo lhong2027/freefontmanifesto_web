@@ -62,7 +62,7 @@ nav a:hover {
 
 h1 {
     font-family: work-sans-black;
-    font-size: 3rem;
+    font-size: 200px;
 }
 
 h1:hover {
@@ -224,82 +224,6 @@ p:hover {
 
 @media (max-width: 768px) {
     body {
-        padding: 40px 40px;
-        background-color: blue;
-        color: white;
-    }
-
-    nav a {
-        font-size: 35px;
-        color: white;
-    }
-
-    nav a:hover {
-        color: white;
-    }
-
-    h1 {
-        font-size: 2.2rem;
-        color: white;
-    }
-
-    h1:hover {
-        color: white;
-    }
-
-    h2 {
-        font-size: 1.5rem;
-        margin: 50px 0 60px 0;
-        color: white;
-    }
-
-    /* Forces the inline-colored blue words in your h2 to turn white */
-    h2 span {
-        color: white !important;
-    }
-
-    h3 {
-        font-size: 1.2rem;
-        color: white;
-    }
-
-    .box1 h3:hover,
-    .box2 h3:hover,
-    .box3 h3:hover,
-    .box4 h3:hover {
-        color: white;
-    }
-
-    p:hover,
-    .box1 p:hover,
-    .box2 p:hover,
-    .box3 p:hover,
-    .box4 p:hover {
-        color: white;
-    }
-
-    .asterisk {
-        color: white;
-    }
-
-    .vertical-marquee {
-        width: 25px;
-        font-size: 0.9rem;
-        color: white;
-    }
-
-    .vertical-marquee.left {
-        left: 2px;
-    }
-
-    .vertical-marquee.right {
-        right: 2px;
-    }
-}
-
-/*
-@media (max-width: 768px) {
-    body {
         padding: 40px;
     }
 
@@ -333,4 +257,3 @@ p:hover {
         right: 2px;
     }
 }
-*/
