@@ -60,38 +60,63 @@ nav a:hover {
     font-size: 70px;
 }
 
+/* Add this new wrapper style */
+.h1-wrapper {
+    position: relative;
+    height: 540px; /* Adjust this height if needed to fit your 3 lines at 200px */
+    overflow: visible;
+}
+
 h1 {
     font-family: work-sans-black;
     font-size: 200px;
-    margin-bottom: 60px;
+    line-height: 0.9; /* Keeps line spacing tighter and more consistent */
+    margin-bottom: 0;
+    margin-top: 60px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
 }
 
+/* Update h2 spacing since h1 is now absolute */
 h2 {
     font-family: work-sans-black;
-    font-size: 1.8rem;
-    margin: 70px 0px 100px 0;
+    font-size: 3.8rem;
+    margin: 200px 0px 200px 0;
+    line-height: 1.8;
 }
 
 h3 {
-    font-size: 1.5rem;
+    font-size: 2rem;
     cursor: pointer;
     font-family: work-sans-black;
+    margin-bottom: 50px;
 }
 
-.box1 h3:hover {
+.box1:hover h3,
+.box1:hover p {
     font-family: slackey;
     color: blue;
 }
-.box2 h3:hover {
+
+/* When hovering box2 */
+.box2:hover h3,
+.box2:hover p {
     font-family: gemini;
     color: blue;
 }
-.box3 h3:hover {
+
+/* When hovering box3 */
+.box3:hover h3,
+.box3:hover p {
     font-family: hikaru;
     color: blue;
 }
 
-.box4 h3:hover {
+/* When hovering box4 */
+.box4:hover h3,
+.box4:hover p {
     font-family: garamondt;
     color: blue;
 }
@@ -110,36 +135,32 @@ p:hover {
     margin-bottom: 40px;
 }
 
-.box p {
-    max-height: 0;
-    overflow: hidden;
+/* The Grid trick: animates from 0fr (collapsed) to 1fr (fully expanded) automatically */
+.box .p-content {
+    display: grid;
+    grid-template-rows: 0fr;
     opacity: 0;
     transition:
-        max-height 0.3s ease,
+        grid-template-rows 0.3s ease,
         opacity 0.2s ease,
         margin 0.2s ease;
     margin: 0;
+    overflow: hidden;
 }
 
-.box1 p:hover {
-    font-family: slackey;
+/* Ensure the inner paragraph shrinks to 0 when collapsed */
+.box .p-content > p {
+    min-height: 0;
+    margin: 0;
 }
 
-.box2 p:hover {
-    font-family: gemini;
-}
-
-.box3 p:hover {
-    font-family: hikaru;
-}
-
-.box4 p:hover {
-    font-family: garamondt;
-}
-
-.box.active p {
-    max-height: 300px;
+.box.active .p-content {
+    grid-template-rows: 1fr;
     opacity: 1;
+    margin: 30px 0;
+}
+
+.box.active .p-content > p {
     margin: 30px 0;
 }
 
@@ -150,26 +171,8 @@ p:hover {
     cursor: pointer;
 }
 
-.asterisk:hover {
-    font-size: 5rem;
-    animation-name: spin;
-    animation-duration: 0.1s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-}
-
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
 /*marqueeeee*/
 
-/* Vertical Marquee Styling */
 .vertical-marquee {
     position: fixed;
     top: 0;
@@ -216,6 +219,16 @@ p:hover {
     }
 }
 
+/*blue asterisks*/
+
+.changing-asterisk {
+    color: blue;
+    display: inline-block;
+    text-align: center;
+    width: 2.5ch;
+    vertical-align: baseline;
+}
+
 /* mmmmmmmmmmmmobile versionnnnnnnnnnnnnnnnnnnnn*/
 
 @media (max-width: 768px) {
@@ -227,17 +240,18 @@ p:hover {
         font-size: 35px;
     }
 
+    .h1-wrapper {
+        height: auto;
+    }
+
     h1 {
-        font-size: 2.2rem;
+        font-size: 5rem;
+        position: relative;
     }
 
     h2 {
-        font-size: 1rem;
-        margin: 30px 0 40px 0;
-    }
-
-    h3 {
-        font-size: 1.2rem;
+        font-size: 2rem;
+        margin: 100px 0 100px 0;
     }
 
     .vertical-marquee {
