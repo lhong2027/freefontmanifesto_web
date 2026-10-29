@@ -284,26 +284,25 @@ p:hover {
 
 @media (max-width: 900px) {
     main {
-        grid-template-columns: 1fr; /* Single column on tablets/small screens */
+        grid-template-columns: 1fr;
     }
 }
 
 @media (max-width: 768px) {
     body {
-        padding: 30px 20px; /* Safe padding for phones */
+        padding: 30px 20px;
     }
 
     nav a {
         font-size: 35px;
     }
 
-    /* FIXED: Prevented the huge blank gap below H1 */
     .h1-wrapper {
         height: auto;
     }
 
     h1 {
-        font-size: 4.5rem; /* Scaled down slightly more to fit small phone screens nicely */
+        font-size: 4rem;
         position: relative;
     }
 
