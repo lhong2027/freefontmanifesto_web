@@ -38,7 +38,7 @@
 
 body {
     background-color: #f5f5f5;
-    padding: 100px;
+    padding: 100px 200px 200px 200px;
 }
 
 nav {
@@ -50,7 +50,7 @@ nav {
 
 nav a {
     text-decoration: none;
-    color: blue;
+    color: rgb(237, 0, 83);
     font-family: work-sans-black;
     font-size: 50px;
     transition: 0.1s;
@@ -72,7 +72,7 @@ h1 {
     font-size: 200px;
     line-height: 0.9; /* Keeps line spacing tighter and more consistent */
     margin-bottom: 0;
-    margin-top: 60px;
+    margin-top: 20px;
     position: absolute;
     top: 0;
     left: 0;
@@ -83,59 +83,75 @@ h1 {
 h2 {
     font-family: work-sans-black;
     font-size: 3.8rem;
-    margin: 200px 0px 200px 0;
+    margin: 300px 0px 300px 0;
     line-height: 1.8;
+}
+
+/* ==========================================
+   GRID LAYOUT FOR THE BOXES (2 per row)
+   ========================================== */
+main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    align-items: start;
+}
+
+/* Keep nav and header spanning full width across both columns */
+main nav,
+main header {
+    grid-column: 1 / -1;
 }
 
 h3 {
     font-size: 2rem;
     cursor: pointer;
     font-family: work-sans-black;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 .box1:hover h3,
 .box1:hover p {
     font-family: slackey;
-    color: blue;
+    color: rgb(237, 0, 83);
 }
 
 /* When hovering box2 */
 .box2:hover h3,
 .box2:hover p {
     font-family: gemini;
-    color: blue;
+    color: rgb(237, 0, 83);
 }
 
-/* When hovering box3 */
 .box3:hover h3,
 .box3:hover p {
     font-family: hikaru;
-    color: blue;
+    color: rgb(237, 0, 83);
 }
 
 /* When hovering box4 */
 .box4:hover h3,
 .box4:hover p {
     font-family: garamondt;
-    color: blue;
+    color: rgb(237, 0, 83);
 }
 
 p {
     font-family: work-sans-regular;
     font-size: 1rem;
     line-height: 1.5;
-    margin: 30px 0;
+    margin: 20px 0;
+    max-width: 100%;
 }
 p:hover {
-    color: blue;
+    color: rgb(237, 0, 83);
 }
 
 .box {
-    margin-bottom: 40px;
+    margin-bottom: 100px;
+    scroll-margin-top: 100px;
 }
 
-/* The Grid trick: animates from 0fr (collapsed) to 1fr (fully expanded) automatically */
 .box .p-content {
     display: grid;
     grid-template-rows: 0fr;
@@ -148,7 +164,6 @@ p:hover {
     overflow: hidden;
 }
 
-/* Ensure the inner paragraph shrinks to 0 when collapsed */
 .box .p-content > p {
     min-height: 0;
     margin: 0;
@@ -157,15 +172,15 @@ p:hover {
 .box.active .p-content {
     grid-template-rows: 1fr;
     opacity: 1;
-    margin: 30px 0;
+    margin: 20px 0;
 }
 
 .box.active .p-content > p {
-    margin: 30px 0;
+    margin: 20px 0;
 }
 
 .asterisk {
-    color: blue;
+    color: rgb(237, 0, 83);
     transition: 0.1s;
     display: inline-block;
     cursor: pointer;
@@ -177,12 +192,12 @@ p:hover {
     position: fixed;
     top: 0;
     bottom: 0;
-    width: 40px; /* Adjust width as needed */
+    width: 40px;
     overflow: hidden;
     z-index: 1000;
-    pointer-events: none; /* Prevents blocking clicks on elements near the edges */
+    pointer-events: none;
     font-family: work-sans-black;
-    color: blue;
+    color: rgb(237, 0, 83);
     font-size: 1.2rem;
     letter-spacing: 2px;
 }
@@ -219,44 +234,87 @@ p:hover {
     }
 }
 
-/*blue asterisks*/
-
 .changing-asterisk {
-    color: blue;
+    color: rgb(237, 0, 83);
     display: inline-block;
     text-align: center;
     width: 2.5ch;
     vertical-align: baseline;
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+.changing-asterisk:hover {
+    transform: scale(1.1);
+}
+
+.ask1 {
+    font-family: slackey;
+    font-size: 2.2rem;
+}
+
+.ask1:hover {
+    font-size: 3.5rem;
+}
+
+.ask2 {
+    font-family: gemini;
+    font-size: 2.9rem;
+}
+.ask2:hover {
+    font-size: 3.5rem;
+}
+.ask3 {
+    font-family: hikaru;
+    font-size: 2.8rem;
+}
+.ask3:hover {
+    font-size: 3.5rem;
+}
+
+.ask4 {
+    font-family: garamondt;
+    font-size: 2.7rem;
+}
+.ask4:hover {
+    font-size: 3.5rem;
 }
 
 /* mmmmmmmmmmmmobile versionnnnnnnnnnnnnnnnnnnnn*/
 
+@media (max-width: 900px) {
+    main {
+        grid-template-columns: 1fr; /* Single column on tablets/small screens */
+    }
+}
+
 @media (max-width: 768px) {
     body {
-        padding: 40px;
+        padding: 30px 20px; /* Safe padding for phones */
     }
 
     nav a {
         font-size: 35px;
     }
 
+    /* FIXED: Prevented the huge blank gap below H1 */
     .h1-wrapper {
         height: auto;
     }
 
     h1 {
-        font-size: 5rem;
+        font-size: 4.5rem; /* Scaled down slightly more to fit small phone screens nicely */
         position: relative;
     }
 
     h2 {
-        font-size: 2rem;
-        margin: 100px 0 100px 0;
+        font-size: 1.8rem;
+        margin: 60px 0 60px 0;
     }
 
     .vertical-marquee {
-        width: 25px;
-        font-size: 0.9rem;
+        width: 20px;
+        font-size: 0.8rem;
     }
 
     .vertical-marquee.left {

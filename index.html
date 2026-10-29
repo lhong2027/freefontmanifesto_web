@@ -69,25 +69,43 @@
                 </div>
                 <h2>
                     What if
-                    <span style="color: blue; font-family: pecita; text-decoration: line-through"
+                    <span
+                        style="
+                            color: rgb(237, 0, 83);
+                            font-family: pecita;
+                            text-decoration: line-through;
+                        "
                         >EVERY</span
                     >
-                    a few<span class="changing-asterisk">**</span> <br />
+                    a few<span class="changing-asterisk ask1" data-target="box1">**</span> <br />
                     digital type foundr<span
-                        style="color: blue; font-family: pecita; text-decoration: line-through"
+                        style="
+                            color: rgb(237, 0, 83);
+                            font-family: pecita;
+                            text-decoration: line-through;
+                        "
                         >Y</span
-                    >ies<span class="changing-asterisk">**</span><br />
+                    >ies<span class="changing-asterisk ask2" data-target="box2">**</span><br />
                     on earth gave away one
-                    <span style="color: blue; font-family: pecita; text-decoration: line-through"
+                    <span
+                        style="
+                            color: rgb(237, 0, 83);
+                            font-family: pecita;
+                            text-decoration: line-through;
+                        "
                         >GREAT</span
                     >
-                    good<span class="changing-asterisk">***</span> <br />
-                    typeface as a gift to humanity? <span class="changing-asterisk">****</span>
+                    good<span class="changing-asterisk ask3" data-target="box3">***</span> <br />
+                    typeface as a gift to humanity?
+                    <span class="changing-asterisk ask4" data-target="box4">****</span>
                 </h2>
             </header>
 
             <div class="box box1">
-                <h3 class="sub sub1">**WHAT IS A FREE FONT?</h3>
+                <h3 class="sub sub1">
+                    <span style="color: rgb(237, 0, 83); font-family: slackey">**</span>WHAT IS A
+                    FREE FONT?
+                </h3>
                 <div class="p-content">
                     <p>
                         A free font is not just a typeface that you don’t have to pay for. A stolen
@@ -105,7 +123,11 @@
             </div>
 
             <div class="box box2">
-                <h3 class="sub sub2">**SHOULD ALL FONTS BE FREE?</h3>
+                <h3 class="sub sub2">
+                    <span style="color: rgb(237, 0, 83); font-family: gemini; font-size: 2.9rem"
+                        >**</span
+                    >SHOULD ALL FONTS BE FREE?
+                </h3>
                 <div class="p-content">
                     <p>
                         Typeface design is a profession and a business. If all fonts were free—or
@@ -122,7 +144,11 @@
             </div>
 
             <div class="box box3">
-                <h3>***WHAT MAKES A TYPEFACE “GOOD”?</h3>
+                <h3>
+                    <span style="color: rgb(237, 0, 83); font-family: hikaru; font-size: 2.8rem"
+                        >***</span
+                    >WHAT MAKES A TYPEFACE “GOOD”?
+                </h3>
                 <div class="p-content">
                     <p>
                         Currently, most fonts created in the open source spirit are produced for
@@ -140,7 +166,11 @@
             </div>
 
             <div class="box box4">
-                <h3>****IS A TYPEFACE A MEANINGFUL GIFT TO HUMANITY?</h3>
+                <h3>
+                    <span style="color: rgb(237, 0, 83); font-family: garamondt; font-size: 2.7rem"
+                        >****</span
+                    >IS A TYPEFACE A MEANINGFUL GIFT TO HUMANITY?
+                </h3>
                 <div class="p-content">
                     <p>
                         In the scheme of things, a typeface may seem like a small gift, so maybe
@@ -159,22 +189,35 @@
         </main>
 
         <script>
-            // 1. Accordion functionality
+            // 1. Accordion functionality for H3 headings
             const boxes = document.querySelectorAll('.box');
 
             boxes.forEach((box) => {
                 const heading = box.querySelector('h3');
 
                 heading.addEventListener('click', () => {
-                    // Toggle the 'active' class on the clicked box
                     box.classList.toggle('active');
                 });
             });
 
-            // List of fonts
+            // 2. Accordion functionality for Changing Asterisks with 'start' block positioning
+            const changingAsterisks = document.querySelectorAll('.changing-asterisk');
+
+            changingAsterisks.forEach((asterisk) => {
+                asterisk.addEventListener('click', () => {
+                    const targetClass = asterisk.getAttribute('data-target');
+                    const targetBox = document.querySelector(`.${targetClass}`);
+
+                    if (targetBox) {
+                        targetBox.classList.toggle('active');
+                        targetBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+
+            // 3. Font animation for H1
             const fontList = [
                 'work-sans-black',
-                'work-sans-regular',
                 'gemini',
                 'hikaru',
                 'pecita',
@@ -182,9 +225,8 @@
                 'slackey',
             ];
 
-            // Helper function to animate any element independently
             function startFontAnimation(element, intervalTime) {
-                let currentIndex = Math.floor(Math.random() * fontList.length); // Start at a random font
+                let currentIndex = Math.floor(Math.random() * fontList.length);
 
                 setInterval(() => {
                     currentIndex = (currentIndex + 1) % fontList.length;
@@ -192,18 +234,8 @@
                 }, intervalTime);
             }
 
-            // 2. Animate H1 (changes every 1000ms / 1 second)
             const h1Element = document.querySelector('header h1');
             startFontAnimation(h1Element, 1000);
-
-            // 3. Animate each .changing-asterisk element at slightly different speeds
-            const changingAsterisks = document.querySelectorAll('.changing-asterisk');
-
-            changingAsterisks.forEach((asterisk, index) => {
-                // Give each asterisk a slightly different timing (e.g., 700ms, 1200ms, 850ms, etc.)
-                const randomSpeed = 700 + index * 150 + Math.random() * 300;
-                startFontAnimation(asterisk, randomSpeed);
-            });
         </script>
     </body>
 </html>
